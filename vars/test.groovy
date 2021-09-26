@@ -1,4 +1,4 @@
-def call(first){
+def call(Map pipelineParams){
 pipeline {
     agent any
     stages {
@@ -10,14 +10,14 @@ pipeline {
         
         stage('CLONING_SOURCE_CODE') {
             steps {
-                echo "${first}"
+                echo "${pipelineParams.first}"
             }
         }
         
         stage('BUILD') {
             steps{
                 script {
-                    echo "${first}"
+                    echo "${pipelineParams.second}"
                 }
             }
         }
@@ -25,20 +25,20 @@ pipeline {
         stage('SIGNED_APK') {
             steps{
                 script {
-                    echo "${first}"
+                    echo "${pipelineParams.third}"
                 }
             }
         }
         
         stage('PUBLISH_APP_CENTER') {
             steps {
-                echo "${first}"
+                echo "${pipelineParams.fourth}"
             }
         }
     }
     post {
         always {
-            echo "${first}"
+            echo "${pipelineParams.fifth}"
         }
     }
 }
