@@ -1,3 +1,8 @@
+/*
+@Library('smartlizzard-shared-library') _
+test (first: 'first', second: 'second', third: 'third', fourth: 'fourth', fifth: 'fifth')
+*/
+
 def call(Map pipelineParams){
 pipeline {
     agent any
