@@ -10,14 +10,14 @@ pipeline {
         
         stage('CLONING_SOURCE_CODE') {
             steps {
-                echo "${first}
+                echo "${first}"
             }
         }
         
         stage('BUILD') {
             steps{
                 script {
-                    echo "${second}
+                    echo "${second}"
                 }
             }
         }
@@ -25,7 +25,7 @@ pipeline {
         stage('SIGNED_APK') {
             steps{
                 script {
-                    echo "${third}
+                    echo "${third}"
                 }
             }
         }
@@ -38,7 +38,7 @@ pipeline {
     }
     post {
         always {
-            echo "${fifth}
+            echo "${fifth}"
         }
     }
 }
