@@ -1,4 +1,4 @@
-def call(first, second, third, fourth, fifth){
+def call(first){
 pipeline {
     agent any
     stages {
@@ -17,7 +17,7 @@ pipeline {
         stage('BUILD') {
             steps{
                 script {
-                    echo "${second}"
+                    echo "${first}"
                 }
             }
         }
@@ -25,20 +25,20 @@ pipeline {
         stage('SIGNED_APK') {
             steps{
                 script {
-                    echo "${third}"
+                    echo "${first}"
                 }
             }
         }
         
         stage('PUBLISH_APP_CENTER') {
             steps {
-                echo "${fourth}"
+                echo "${first}"
             }
         }
     }
     post {
         always {
-            echo "${fifth}"
+            echo "${first}"
         }
     }
 }
